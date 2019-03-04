@@ -1,0 +1,59 @@
+.important
+  width: 100%
+  .important__content
+    max-width: $max-width
+    height: 100%
+    margin: 0 auto
+    .important__content-header
+      padding: 4em 0
+      text-align: center
+      h4
+        font-size: 2rem
+      p
+        font-size: 1rem
+    
+    .important__content-body
+      display: flex
+
+      .important__content-body__item
+        width: calc((100% - (3em * 2)) / 3)
+        background: white
+        margin-right: 3em
+        box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1)
+        &:nth-child(3n)
+          margin-right: 0
+
+        .__item_header
+          width: 100%
+          background: #eee
+          position: relative
+          &:before
+            content: ''
+            display: inline-block
+            padding-top: 56%
+            // float: left
+          &:after
+            content: attr(data-inmueble)
+            position: absolute
+            bottom: 1em
+            left: 1em
+            background: rgba(black, .4)
+            padding: .5em 1em
+            color: white
+            text-transform: uppercase
+            font-size: .8rem
+            letter-spacing: .5px
+
+        .__item_body
+          padding: .8em 1.5em
+
+          .title
+            font-size: 1.3rem
+            font-weight: bold
+
+          .date
+            font-size: .8rem
+            font-weight: bold
+
+          .description
+            font-size: 1rem
