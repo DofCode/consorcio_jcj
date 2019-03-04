@@ -1,0 +1,71 @@
+.nav
+  position: relative
+  // height: 124px
+
+  .nav__fixed
+    position: fixed
+    top: 50px
+    left: 0
+    width: 100%
+    .nav__content
+      width: 100%
+      .nav__redes
+        display: flex
+        justify-content: flex-end
+        width: 100%
+        max-width: calc(1280px + 2em)
+        margin: 0 auto
+        padding: 0 2em
+        >ul
+          display: flex
+          align-items: center
+          >li
+            margin-left: 2em
+            >a
+              color: white
+      .nav__band
+        width: 100%
+        background: rgba(#000, .7)
+        .band__content
+          padding: 0 2em
+          width: 100%
+          max-width: calc(1280px + 2em)
+          margin: 0 auto
+          display: flex
+          justify-content: space-between
+          .logo
+
+          nav
+            @media(max-width: 1023px)
+              position: fixed
+              top: 0
+              left: -300px
+              width: 300px
+              height: 100vh
+              background: white
+            .nav__nav
+              display: flex
+              align-items: center
+              
+              >li
+                margin-left: 2em
+                padding-left: 2em
+                border-left: 1px solid rgba(#FFF, .5)
+                &:first-child
+                  border-left: 0
+                  padding-left: 0
+
+                >a
+                  color: white
+                  display: block
+              @media(max-width: 1023px)
+                flex-direction: column
+                align-items: flex-start
+                >li
+                  margin-left: 0
+                  padding-left: 0
+                  border: none
+                  >a
+                    padding: 1em 2em
+                    color: black
+

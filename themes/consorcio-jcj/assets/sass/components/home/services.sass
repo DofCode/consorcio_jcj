@@ -1,0 +1,36 @@
+.sercices
+  max-width: $max-width
+  margin: 0 auto
+  .sercices__item
+    max-width: 960px
+    display: flex
+    margin: 4em auto
+    .sercices__item-left
+      width: 50%
+      padding-right: 4em
+      display: flex
+      justify-content: flex-end
+      h4
+        font-size: 2rem
+         margin: 0
+    
+    .sercices__item-right
+      width: 50%
+      padding-left: 4em
+      border-left: 3px solid #4598ff
+      ul
+          li
+          font-size: 1rem
+          list-style-type: circle
+          margin-bottom: 1em
+
+    @media(max-width: 680px)
+      flex-direction: column
+      padding: 0 2em
+      .sercices__item-left
+        width: 100%
+        justify-content: flex-start
+        margin-bottom: 2em
+      .sercices__item-right
+        width: 100%
+
