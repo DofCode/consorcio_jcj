@@ -1,11 +1,15 @@
 .important
   width: 100%
+  padding: 0 2em
   .important__content
     max-width: $max-width
+    width: calc(100% - 2em)
     height: 100%
     margin: 0 auto
+    padding-top: 4em
+    padding-bottom: 8em
     .important__content-header
-      padding: 4em 0
+      padding-bottom: 4em
       text-align: center
       h4
         font-size: 2rem
@@ -14,14 +18,27 @@
     
     .important__content-body
       display: flex
-
+      flex-wrap: wrap
       .important__content-body__item
         width: calc((100% - (3em * 2)) / 3)
         background: white
         margin-right: 3em
+        margin-bottom: 3em
         box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1)
         &:nth-child(3n)
           margin-right: 0
+
+        @media(max-width: 768px)
+          width: calc((100% - (3em * 1)) / 2)
+          &:nth-child(3n)
+            margin-right: 3em
+          &:nth-child(2n)
+            margin-right: 0
+        @media(max-width: 768px)
+          width: 100%
+          margin-right: 0
+          &:nth-child(3n)
+            margin-right: 0
 
         .__item_header
           width: 100%
