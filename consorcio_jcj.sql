@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2019 a las 02:51:58
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 08-03-2019 a las 17:17:26
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.0.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,8 @@ CREATE TABLE `backend_access_log` (
 --
 
 INSERT INTO `backend_access_log` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`) VALUES
-(1, 1, '127.0.0.1', '2019-03-03 19:47:23', '2019-03-03 19:47:23');
+(1, 1, '127.0.0.1', '2019-03-03 19:47:23', '2019-03-03 19:47:23'),
+(2, 1, '127.0.0.1', '2019-03-04 18:14:40', '2019-03-04 18:14:40');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ CREATE TABLE `backend_users` (
 --
 
 INSERT INTO `backend_users` (`id`, `first_name`, `last_name`, `login`, `email`, `password`, `activation_code`, `persist_code`, `reset_password_code`, `permissions`, `is_activated`, `role_id`, `activated_at`, `last_login`, `created_at`, `updated_at`, `deleted_at`, `is_superuser`) VALUES
-(1, 'Admin', 'Person', 'admin', 'admin@domain.tld', '$2y$10$tELD0CJ7jqtFCqRCBhoT7ef5elp75AeM8K1Bm9mgYucq65cEf6Ic2', NULL, '$2y$10$Q1uXiyynGQwNHeR7SOG.s.8YetZV5zNqqtWTxLcqJhuGe.UYpI4GC', NULL, '', 1, 2, NULL, '2019-03-03 19:47:23', '2019-03-03 19:45:07', '2019-03-03 19:47:23', NULL, 1);
+(1, 'Admin', 'Person', 'admin', 'admin@domain.tld', '$2y$10$tELD0CJ7jqtFCqRCBhoT7ef5elp75AeM8K1Bm9mgYucq65cEf6Ic2', NULL, '$2y$10$Q1uXiyynGQwNHeR7SOG.s.8YetZV5zNqqtWTxLcqJhuGe.UYpI4GC', NULL, '', 1, 2, NULL, '2019-03-04 18:14:40', '2019-03-03 19:45:07', '2019-03-04 18:14:40', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -485,8 +486,9 @@ CREATE TABLE `system_parameters` (
 
 INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VALUES
 (1, 'system', 'update', 'count', '0'),
-(2, 'system', 'update', 'retry', '1551718047'),
-(3, 'cms', 'theme', 'active', '\"consorcio-jcj\"');
+(2, 'system', 'update', 'retry', '1551980872'),
+(3, 'cms', 'theme', 'active', '\"consorcio-jcj\"'),
+(4, 'system', 'core', 'build', '447');
 
 -- --------------------------------------------------------
 
@@ -564,6 +566,13 @@ CREATE TABLE `system_settings` (
   `item` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `value` mediumtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `system_settings`
+--
+
+INSERT INTO `system_settings` (`id`, `item`, `value`) VALUES
+(1, 'backend_brand_settings', '{\"app_name\":\"October CMS\",\"app_tagline\":\"Volviendo a lo b\\u00e1sico\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#34495e\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline_no_icons\",\"custom_css\":\"\"}');
 
 --
 -- Índices para tablas volcadas
@@ -768,7 +777,7 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT de la tabla `backend_access_log`
 --
 ALTER TABLE `backend_access_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `backend_users`
@@ -870,19 +879,19 @@ ALTER TABLE `system_mail_templates`
 -- AUTO_INCREMENT de la tabla `system_parameters`
 --
 ALTER TABLE `system_parameters`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `system_plugin_history`
 --
 ALTER TABLE `system_plugin_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `system_plugin_versions`
 --
 ALTER TABLE `system_plugin_versions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `system_request_logs`
@@ -900,7 +909,7 @@ ALTER TABLE `system_revisions`
 -- AUTO_INCREMENT de la tabla `system_settings`
 --
 ALTER TABLE `system_settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
