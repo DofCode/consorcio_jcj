@@ -1,0 +1,4 @@
+title: Countries
+modelClass: JAlejandroArias\Inmuebles\Models\Country
+toolbar:
+    buttons: reorder_toolbar

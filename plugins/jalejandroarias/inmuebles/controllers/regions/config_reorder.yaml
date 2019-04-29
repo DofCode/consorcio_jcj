@@ -1,0 +1,4 @@
+title: Regions
+modelClass: JAlejandroArias\Inmuebles\Models\Region
+toolbar:
+    buttons: reorder_toolbar

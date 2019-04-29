@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: 'Nombre del estado o región'
+        span: left
+        required: 1
+        type: text
+    country:
+        label: 'País del estado o región'
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation

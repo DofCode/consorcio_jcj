@@ -1,0 +1,12 @@
+list: $/jalejandroarias/inmuebles/models/type/columns.yaml
+modelClass: JAlejandroArias\Inmuebles\Models\Type
+title: Types
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'jalejandroarias/inmuebles/types/update/:id'

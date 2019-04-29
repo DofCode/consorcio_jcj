@@ -1,0 +1,10 @@
+name: Regions
+form: $/jalejandroarias/inmuebles/models/region/fields.yaml
+modelClass: JAlejandroArias\Inmuebles\Models\Region
+defaultRedirect: jalejandroarias/inmuebles/regions
+create:
+    redirect: 'jalejandroarias/inmuebles/regions/update/:id'
+    redirectClose: jalejandroarias/inmuebles/regions
+update:
+    redirect: jalejandroarias/inmuebles/regions
+    redirectClose: jalejandroarias/inmuebles/regions

@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: Nombre
+        type: text
+        searchable: true
+        sortable: true
+    country_id:
+        label: País
+        type: text
+        select: name
+        relation: country

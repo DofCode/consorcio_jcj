@@ -1,0 +1,42 @@
+columns:
+    name:
+        label: 'Nombre del inmueble'
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: Precio
+        type: number
+        sortable: true
+    bathroom:
+        label: Baños
+        type: number
+        sortable: true
+    parking:
+        label: Estacionamiento
+        type: number
+        sortable: true
+    country_id:
+        label: País
+        type: text
+        searchable: true
+        select: name
+        relation: country
+    region_id:
+        label: 'Estado o Región'
+        type: text
+        searchable: true
+        select: name
+        relation: region
+    type_id:
+        label: Tipo
+        type: text
+        searchable: true
+        select: name
+        relation: type
+    status_id:
+        label: 'Inmueble en'
+        type: text
+        searchable: true
+        select: name
+        relation: status

@@ -1,0 +1,10 @@
+name: Types
+form: $/jalejandroarias/inmuebles/models/type/fields.yaml
+modelClass: JAlejandroArias\Inmuebles\Models\Type
+defaultRedirect: jalejandroarias/inmuebles/types
+create:
+    redirect: 'jalejandroarias/inmuebles/types/update/:id'
+    redirectClose: jalejandroarias/inmuebles/types
+update:
+    redirect: jalejandroarias/inmuebles/types
+    redirectClose: jalejandroarias/inmuebles/types

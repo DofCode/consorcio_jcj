@@ -1,0 +1,116 @@
+tabs:
+    fields:
+        name:
+            label: 'Nombre del inmueble'
+            oc.commentPosition: below
+            span: left
+            placeholder: 'Nombre del inmueble'
+            required: 1
+            type: text
+            tab: 'Datos principales'
+        price:
+            label: Precio
+            span: right
+            placeholder: '0.00'
+            default: '0.00'
+            type: number
+            tab: 'Datos principales'
+        room:
+            label: Habitaciones
+            span: auto
+            default: '1'
+            type: number
+            tab: 'Datos principales'
+        bathroom:
+            label: Baños
+            span: right
+            default: '1'
+            type: number
+            tab: 'Datos principales'
+        meters:
+            label: 'Metros cuadrados'
+            span: left
+            type: number
+            tab: 'Datos principales'
+        parking:
+            label: Estacionamiento
+            span: right
+            default: '1'
+            type: number
+            tab: 'Datos principales'
+        status:
+            label: 'Inmueble en'
+            oc.commentPosition: below
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            required: 1
+            type: relation
+            tab: 'Datos principales'
+        year_of_construction:
+            label: 'Años de contrucción'
+            span: right
+            default: '1'
+            type: number
+            tab: 'Datos principales'
+        country:
+            label: País
+            span: left
+            required: 1
+            type: dropdown
+            tab: 'Datos principales'
+        region:
+            label: 'Estado o región'
+            span: right
+            required: 1
+            dependsOn: country
+            type: dropdown
+            tab: 'Datos principales'
+        city:
+            label: Ciudad
+            span: left
+            placeholder: 'Ciudad donde se encuentra el inmueble'
+            type: text
+            tab: 'Datos principales'
+        direction:
+            label: Dirección
+            span: right
+            placeholder: 'Dirección del inmueble'
+            type: text
+            tab: 'Datos principales'
+        neighborhood:
+            label: Urbanización
+            span: left
+            placeholder: 'Urbanización o barrio donde se encuentra el inmueble'
+            type: text
+            tab: 'Datos principales'
+        type:
+            label: 'Tipo de inmueble'
+            oc.commentPosition: below
+            nameFrom: name
+            descriptionFrom: description
+            span: right
+            required: 1
+            type: relation
+            tab: 'Datos principales'
+        description:
+            label: Descripción
+            size: small
+            oc.commentPosition: above
+            span: left
+            placeholder: 'Escribe una descripción aquí'
+            required: 1
+            type: textarea
+            tab: 'Datos principales'
+        album:
+            label: 'Imagenes del inmueble'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: jpg
+            span: right
+            required: 1
+            type: fileupload
+            comment: 'Puedes subir una o varias fotos del inmueble'
+            tab: 'Datos principales'

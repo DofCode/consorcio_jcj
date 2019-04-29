@@ -1,0 +1,32 @@
+plugin:
+    name: 'jalejandroarias.inmuebles::lang.plugin.name'
+    description: 'jalejandroarias.inmuebles::lang.plugin.description'
+    author: 'J. Alejandro Arias'
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Inmuebles
+        url: jalejandroarias/inmuebles/inmuebles
+        icon: icon-home
+        sideMenu:
+            side-menu-item2:
+                label: Inmuebles
+                url: jalejandroarias/inmuebles/inmuebles
+                icon: icon-home
+            side-menu-item:
+                label: Paises
+                url: jalejandroarias/inmuebles/countries
+                icon: icon-flag
+            side-menu-item3:
+                label: 'Regiones o estados'
+                url: jalejandroarias/inmuebles/regions
+                icon: icon-flag-o
+            side-menu-item4:
+                label: 'Tipo de inmueble'
+                url: jalejandroarias/inmuebles/types
+                icon: icon-asterisk
+            side-menu-item5:
+                label: 'Estado del inmueble'
+                url: jalejandroarias/inmuebles/status
+                icon: icon-check

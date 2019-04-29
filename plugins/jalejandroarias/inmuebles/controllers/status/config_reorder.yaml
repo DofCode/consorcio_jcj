@@ -1,0 +1,4 @@
+title: Status
+modelClass: JAlejandroArias\Inmuebles\Models\Status
+toolbar:
+    buttons: reorder_toolbar

@@ -56,13 +56,13 @@ return [
             'driver'    => 'mysql',
             'host'      => 'localhost',
             'port'      => 3306,
-            'database'  => 'id8911331_consorcio_jcj',
-            'username'  => 'id8911331_root',
-            'password'  => 'consorcio_jcj',
+            'database'  => 'consorcio_jcj',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix'    => '',
-        ],
+        ],  
 
         'pgsql' => [
             'driver'   => 'pgsql',

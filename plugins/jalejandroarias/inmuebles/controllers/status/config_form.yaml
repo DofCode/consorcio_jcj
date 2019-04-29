@@ -1,0 +1,10 @@
+name: Status
+form: $/jalejandroarias/inmuebles/models/status/fields.yaml
+modelClass: JAlejandroArias\Inmuebles\Models\Status
+defaultRedirect: jalejandroarias/inmuebles/status
+create:
+    redirect: 'jalejandroarias/inmuebles/status/update/:id'
+    redirectClose: jalejandroarias/inmuebles/status
+update:
+    redirect: jalejandroarias/inmuebles/status
+    redirectClose: jalejandroarias/inmuebles/status

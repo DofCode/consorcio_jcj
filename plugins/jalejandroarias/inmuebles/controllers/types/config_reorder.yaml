@@ -1,0 +1,4 @@
+title: Types
+modelClass: JAlejandroArias\Inmuebles\Models\Type
+toolbar:
+    buttons: reorder_toolbar

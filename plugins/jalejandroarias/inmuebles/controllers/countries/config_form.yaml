@@ -1,0 +1,10 @@
+name: Countries
+form: $/jalejandroarias/inmuebles/models/country/fields.yaml
+modelClass: JAlejandroArias\Inmuebles\Models\Country
+defaultRedirect: jalejandroarias/inmuebles/countries
+create:
+    redirect: 'jalejandroarias/inmuebles/countries/update/:id'
+    redirectClose: jalejandroarias/inmuebles/countries
+update:
+    redirect: jalejandroarias/inmuebles/countries
+    redirectClose: jalejandroarias/inmuebles/countries
