@@ -1,0 +1,20 @@
+description = "Resultados de inmuebles"
+==
+<?php
+use JAlejandroArias\Inmuebles\Models\Inmueble;
+
+function onStart()
+{
+  $this['inmuebles'] = Inmueble::where('country_id', 3)->orderBy('created_at', 'desc')->get()->take(8);
+}
+?>
+==
+<div class="results-inmuebles">
+  <div class="master-results-inmuebles">
+    {% for item in inmuebles %}
+      <a class="item" href="/inmueble/{{ item.id }}">
+        <img src="{{ item.album[0].path }}" alt="{{ item.name }}">
+      </a>
+    {% endfor %}
+  </div>
+</div>

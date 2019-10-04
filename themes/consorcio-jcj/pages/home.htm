@@ -2,23 +2,12 @@ title = "Home"
 url = "/"
 layout = "principal"
 is_hidden = 0
-
-[builderList]
-modelClass = "JAlejandroArias\Inmuebles\Models\Inmueble"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "name"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-recordsPerPage = 3
-pageNumber = "{{ :page }}"
 ==
 {% partial 'home/header' %}
 {% partial 'home/about' %}
 {% partial 'home/services' %}
-{% partial 'home/search' %}
+{% partial 'global/search' %}
+{% partial 'home/results-inmuebles' %}
 {% partial 'home/testimonies' %}
 {% partial 'home/important' %}
 {% partial 'home/contact' %}
-{% component 'builderList' %}

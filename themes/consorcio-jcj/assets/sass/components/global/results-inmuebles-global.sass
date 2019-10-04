@@ -1,0 +1,81 @@
+.results-inmuebles-global
+  padding-bottom: 100px
+  padding-top: 80px
+  .master-results-inmuebles
+    max-width: calc(1280px + 2em)
+    width: calc(100% - 2em)
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    padding: 80px 0
+    >.important__content-body__item
+      width: calc((100% - (3em * 2)) / 3)
+      background: white
+      margin-right: 3em
+      margin-bottom: 3em
+      box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1)
+      color: rgba(black, .7)
+      &:nth-child(3n)
+        margin-right: 0
+      @media(max-width: 768px)
+        width: calc((100% - (3em * 1)) / 2)
+        &:nth-child(3n)
+          margin-right: 3em
+        &:nth-child(2n)
+          margin-right: 0
+      @media(max-width: 768px)
+        width: 100%
+        margin-right: 0
+        &:nth-child(3n)
+          margin-right: 0
+
+      .__item_header
+        width: 100%
+        height: 200px
+        position: relative
+        overflow: hidden
+        &:after
+          content: attr(data-inmueble)
+          position: absolute
+          bottom: 1em
+          left: 1em
+          background: rgba(black, .7)
+          padding: .5em 1em
+          color: white
+          text-transform: uppercase
+          font-size: .8rem
+          letter-spacing: .5px
+          z-index: 2
+        >img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+      .__item_body
+        padding: .8em 1.5em
+        overflow: hidden
+        .title
+          font-size: 1.3rem
+          font-weight: bold
+
+        .date
+          font-size: .8rem
+          font-weight: bold
+
+        .description
+          font-size: 1rem
+          color: rgba(black, .5)
+  
+  .pagination-master
+    max-width: calc(1280px + 2em)
+    width: calc(100% - 2em)
+    margin: 0 auto
+    text-align: center
+    .pagination
+      li
+        height: 48px
+        a
+          padding: 0 15px
+          line-height: 48px
+        &.active
+          background-color: #005983

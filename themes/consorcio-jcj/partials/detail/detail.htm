@@ -1,0 +1,60 @@
+description = "Detalle"
+==
+<?php
+use JAlejandroArias\Inmuebles\Models\Inmueble;
+
+function onStart()
+{
+  $inmueble_id = $this->param('inmueble_id');
+  
+  $this['inmueble'] = Inmueble::where('id', $inmueble_id)->first();
+}
+?>
+==
+<div class="detail">
+  <div class="master-detail">
+    
+    <div class="detail-info">
+      <h1>{{ inmueble.name }}</h1>
+      <span><strong>Código:</strong> {{ inmueble.code ? inmueble.code : '--' }}</span>
+    </div>
+    
+    <div class="master-detail-detail">
+      <ul class="item">
+        <li><strong>Inmueble en:</strong> {{ inmueble.status.name }}</li>
+        <li><strong>Tipo:</strong> {{ inmueble.type.name }}</li>
+        <li><strong>Precio:</strong> {{ inmueble.price ? inmueble.price : '--' }} BsS</li>
+        <li><strong>Baños:</strong> {{ inmueble.bathroom ? inmueble.bathroom : '--' }}</li>
+        <li><strong>Estacionamiento:</strong> {{ inmueble.parking ? inmueble.parking : '--' }}</li>
+        <li><strong>Años de construcción:</strong> {{ inmueble.year_of_construction ? inmueble.year_of_construction : '--' }}</li>
+      </ul>
+      <ul class="item">
+        <li>
+          <strong>Descripción:</strong>
+          <p>{{ inmueble.description }}</p>
+        </li>
+      </ul>
+      <ul class="item">
+        <li><strong>País:</strong> {{ inmueble.country.name }}</li>
+        <li><strong>Estado o región:</strong> {{ inmueble.region.name }}</li>
+        <li><strong>Ciudad:</strong> {{ inmueble.city ? inmueble.city : '--' }}</li>
+        <li><strong>Urbanización:</strong> {{ inmueble.neighborhood ? inmueble.neighborhood : '--' }}</li>
+        <li><strong>Dirección:</strong> {{ inmueble.direction ? inmueble.direction : '--'}}</li>
+      </ul>
+    </div>
+    <div class="master-detail-album">
+      <div class="master-detail-album_top">
+        <div class="item">
+          <img src="{{ inmueble.album[0].path }}" alt="">
+        </div>
+      </div>
+      <div class="master-detail-album_bottom">
+        {% for item in inmueble.album|slice(1, 4) %}
+          <div class="item">
+            <img src="{{ item.path }}" alt="">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

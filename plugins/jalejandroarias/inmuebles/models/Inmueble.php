@@ -8,6 +8,42 @@ use Model;
 class Inmueble extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+
+    public function scopeName($query, $name)
+    {
+        if (!is_null($name)) {
+            return $query->where('name', 'like', '%'.$name.'%');
+        }
+
+        return $query;
+    } 
+
+    public function scopeStatus($query, $status)
+    {
+        if (!is_null($status)) {
+            return $query->where('status_id', $status);
+        }
+
+        return $query;
+    }
+    
+    public function scopeType($query, $type)
+    {
+        if (!is_null($type)) {
+            return $query->where('type_id', $type);
+        }
+
+        return $query;
+    }
+
+    public function scopeRegion($query, $region)
+    {
+        if (!is_null($region)) {
+            return $query->where('region_id', $region);
+        }
+
+        return $query;
+    }
     
 
     /**

@@ -1,42 +1,35 @@
 description = "Destacados"
 ==
+<?php
+use JAlejandroArias\Inmuebles\Models\Inmueble;
+
+function onStart()
+{
+  $this['inmuebles'] = Inmueble::where('important', 1)->orderBy('updated_at', 'desc')->get()->take(3);
+}
+?>
+==
 <section class="important">
     <div class="important__content">
       <div class="important__content-header">
         <h4>Inmuebles destacados</h4>
-        <p>Publicaciones recientes en nuestro blog</p>
+        <p>Publicaciones destacadas</p>
       </div>
       <div class="important__content-body">
-        <div class="important__content-body__item">
-          <div class="__item_header" data-inmueble="Apartamento">
-            
-          </div>
-          <div class="__item_body">
-            <h4 class="title">Titulo artículo</h4>
-            <span class="date">16/10/2017</span>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quas quisquam rem perspiciatis et porro commodi. Rem, hic.</p>
-          </div>
-        </div>
-        <div class="important__content-body__item">
-          <div class="__item_header" data-inmueble="Apartamento">
-            
-          </div>
-          <div class="__item_body">
-            <h4 class="title">Titulo artículo</h4>
-            <span class="date">16/10/2017</span>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quas quisquam rem perspiciatis et porro commodi. Rem, hic.</p>
-          </div>
-        </div>
-        <div class="important__content-body__item">
-          <div class="__item_header" data-inmueble="Apartamento">
-            
-          </div>
-          <div class="__item_body">
-            <h4 class="title">Titulo artículo</h4>
-            <span class="date">16/10/2017</span>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quas quisquam rem perspiciatis et porro commodi. Rem, hic.</p>
-          </div>
-        </div>
+        {% for item in inmuebles %}
+          <a class="important__content-body__item" href="/inmueble/{{ item.id }}">
+            <div class="__item_header" data-inmueble="{{ item.type.name }}">
+              <img src="{{ item.album[0].path }}" alt="{{ item.name }}">
+            </div>
+            <div class="__item_body">
+              <h4 class="title">{{ item.name }}</h4>
+              <span class="date">{{ item.created_at |date('M d, Y') }}</span>
+              <p class="description">{{ item.description }}</p>
+            </div>
+          </a>
+        {% else %}
+          <h5>No hay publicaciones destacadas</h5>
+        {% endfor %}
       </div>
     </div>
 </section>

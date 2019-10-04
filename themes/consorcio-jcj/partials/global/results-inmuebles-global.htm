@@ -1,0 +1,66 @@
+description = "Resultados de inmuebles - Global"
+
+[builderList]
+modelClass = "JAlejandroArias\Inmuebles\Models\Country"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 2
+pageNumber = "{{ :page }}"
+==
+<?php
+use JAlejandroArias\Inmuebles\Models\Inmueble;
+
+function onStart()
+{
+  
+  $this['status'] = !empty($_GET['status']) ? $_GET['status'] : null;
+  $this['type']   =   !empty($_GET['type'])   ? $_GET['type']   : null;
+  $this['region'] = !empty($_GET['region']) ? $_GET['region'] : null;
+  $this['search'] = !empty($_GET['search']) ? $_GET['search'] : null;
+  
+  $this['inmuebles'] = Inmueble::name($this['search'])->region($this['region'])->type($this['type'])->status($this['status'])->orderBy('created_at', 'desc')->paginate(12);
+}
+?>
+==
+<div class="results-inmuebles-global">
+  <div class="master-results-inmuebles">
+    {% for item in inmuebles %}
+      <a class="important__content-body__item" href="/inmueble/{{ item.id }}">
+        <div class="__item_header" data-inmueble="{{ item.type.name }}">
+          <img src="{{ item.album[0].path }}" alt="{{ item.name }}">
+        </div>
+        <div class="__item_body">
+          <h4 class="title">{{ item.name }}</h4>
+          <span class="date">{{ item.created_at |date('M d, Y') }}</span>
+          <p class="description">{{ item.description }}</p>
+        </div>
+      </a>
+    {% else %}
+      <h5>Sin resultados...</h5>
+    {% endfor %}
+  </div>
+  
+  <div class="pagination-master">
+    {% if inmuebles.lastPage > 1 %}
+      <ul class="pagination">
+          {% if inmuebles.currentPage > 1 %}
+              <li><a href="results?status={{ status }}&type={{ type }}&region={{ region }}&search={{ search }}&page={{inmuebles.currentPage-1 }}">Atrás</a></li>
+          {% endif %}
+  
+          {% for page in 1..inmuebles.lastPage %}
+              <li class="{{ inmuebles.currentPage == page ? 'active' : null }}">
+                  <a href="results?status={{ status }}&type={{ type }}&region={{ region }}&search={{ search }}&page={{ page }}">{{ page }}</a>
+              </li>
+          {% endfor %}
+  
+          {% if inmuebles.lastPage > inmuebles.currentPage %}
+              <li><a href="results?status={{ status }}&type={{ type }}&region={{ region }}&search={{ search }}&page={{inmuebles.currentPage+1 }}">Siguiente</a></li>
+          {% endif %}
+      </ul>
+    {% endif %}
+  </div>
+</div>

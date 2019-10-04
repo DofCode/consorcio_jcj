@@ -1,0 +1,12 @@
+.results-inmuebles .master-results-inmuebles {
+  max-width: calc(1280px + 2em);
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .results-inmuebles .master-results-inmuebles > .item {
+    width: calc((100% - (15px * 3)) / 4);
+    margin-right: 15px;
+    height: 300px;
+    background: #eee; }

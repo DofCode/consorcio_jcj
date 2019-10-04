@@ -81,3 +81,6 @@
 1.0.28:
     - 'Updated table jalejandroarias_inmuebles_'
     - builder_table_update_jalejandroarias_inmuebles__5.php
+1.0.29:
+    - 'Updated table jalejandroarias_inmuebles_'
+    - builder_table_update_jalejandroarias_inmuebles__6.php

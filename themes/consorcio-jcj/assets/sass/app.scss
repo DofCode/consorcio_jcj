@@ -5,11 +5,17 @@
 @import "components/global/global";
 @import "components/global/nav";
 @import "components/global/footer";
+@import "components/global/search";
+@import "components/global/results-inmuebles-global";
 
 //Home
 @import "components/home/header";
 @import "components/home/about";
 @import "components/home/services";
+@import "components/home/results-inmuebles";
 @import "components/home/testimonies";
 @import "components/home/important";
 @import "components/home/contact";
+
+//Detail
+@import "components/detail/detail";

@@ -1,0 +1,74 @@
+description = "Buscador de Inmuebles"
+==
+<?php
+use JAlejandroArias\Inmuebles\Models\Region;
+use JAlejandroArias\Inmuebles\Models\Status;
+use JAlejandroArias\Inmuebles\Models\Type;
+
+function onStart()
+{
+  @$this['status_get'] = !empty($_GET['status']) ? $_GET['status'] : null;
+  @$this['type_get'] = !empty($_GET['type']) ? $_GET['type'] : null;
+  @$this['region_get'] = !empty($_GET['region']) ? $_GET['region'] : null;
+  @$this['search_get'] = !empty($_GET['search']) ? $_GET['search'] : null;
+  
+  $this['regions'] = Region::where('country_id', 3)->orderBy('name', 'desc')->get();
+  $this['status'] = Status::orderBy('name', 'desc')->get();
+  $this['types'] = Type::orderBy('name', 'desc')->get();
+}
+?>
+==
+<form action="/results" method="get">
+<section class="search" style="background-image: url('http://localhost:8000/storage/app/media/global/background-search.jpg')" id="busqueda-inmuebles">
+  <div class="search-master">
+    <div class="search-master__left">
+      <span>Búsqueda de inmuebles</span>
+    </div>
+    <div class="search-master__right">
+      <div class="row__">
+        <div class="input-div">
+          <select name="status" id="">
+            <option value="" disabled selected>Inmueble en</option>
+            {% for item in status %}
+              {% if status_get == item.id %}
+                <option value="{{ item.id }}" selected>{{ item.name }}</option>
+              {% else %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+        <div class="input-div">
+          <select name="type" id="">
+            <option value="" disabled selected>Tipo de inmueble</option>
+            {% for item in types %}
+              {% if type_get == item.id %}
+                <option value="{{ item.id }}" selected>{{ item.name }}</option>
+              {% else %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="row__">
+        <div class="input-div">
+          <select name="region" id="">
+            <option value="" disabled selected>Estado o región</option>
+            {% for item in regions %}
+              {% if region_get == item.id %}
+                <option value="{{ item.id }}" selected>{{ item.name }}</option>
+              {% else %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+        <div class="input-div">
+          <input type="text" placeholder="Buscar" name="search" value="{{ search_get }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form>
